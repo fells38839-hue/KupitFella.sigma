@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Купить Фелла — магазин Фелл.shop</title>
+<meta name="description" content="Купить Фелла онлайн: классический, на вечер, подписка и коллекционный. Шуточный магазин Фелл.shop с корзиной и оформлением заказа.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Купить Фелла — Фелл.shop">
+<meta property="og:description" content="Единственный магазин, где можно получить Фелла в нескольких комплектациях.">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#2f5bff">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Фелл.shop","inLanguage":"ru","description":"Купить Фелла онлайн в нескольких комплектациях."}</script>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8f0ee;--ink:#14202b;--card:#fff;--blue:#2f5bff;--sun:#ffd23f;--mute:#5b6b76;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1820;--ink:#eef3f5;--card:#1a2631;--blue:#7d9bff;--sun:#ffd23f;--mute:#9aaab5;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 Manrope,system-ui,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:8px 0 28px}
+.logo{font:800 22px Unbounded,sans-serif}
+button{font:600 16px Manrope,sans-serif;cursor:pointer;border:0;border-radius:999px;padding:12px 20px;background:var(--ink);color:var(--bg)}
+button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.hero{padding:20px 0 48px}
+h1{font:800 clamp(56px,16vw,150px)/.95 Unbounded,sans-serif;margin:0;letter-spacing:-.03em}
+h1 span{background:var(--sun);color:#14202b;padding:0 .12em;border-radius:.12em}
+.hero p{max-width:46ch;color:var(--mute);margin:20px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.item{background:var(--card);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.item:nth-child(2){border-radius:44px 12px 44px 12px}
+.item:nth-child(3){border-radius:12px 44px 12px 44px}
+.item h2{font:500 19px/1.25 Unbounded,sans-serif;margin:0}
+.item p{margin:0;color:var(--mute);flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.price{font:800 20px Unbounded,sans-serif}
+.add{background:var(--blue);color:#fff}
+.item .add{transition:transform .15s,background .2s,box-shadow .2s}
+.item .add.on{background:#f0142f;box-shadow:0 0 0 3px #f0142f44,0 0 24px #ff2d4acc;animation:glow 1.6s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 6px #f0142f22,0 0 36px #ff4d66}}
+#cart{position:fixed;inset:0 0 0 auto;width:min(380px,100%);background:var(--card);padding:calc(24px + env(safe-area-inset-top,0px)) 24px calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;gap:12px;box-shadow:-8px 0 40px #0003}
+#cart.open{transform:none}
+#cart h3{font:800 20px Unbounded,sans-serif;margin:0}
+#lines{flex:1;overflow:auto}
+.line{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #8883}
+.line .nm{flex:1}
+.line.off .nm,.line.off .sum{opacity:.4;text-decoration:line-through}
+.line input,#tools input{width:20px;height:20px;accent-color:var(--blue);flex:none}
+#tools{display:flex;justify-content:space-between;align-items:center;gap:10px}
+#tools label{display:flex;align-items:center;gap:8px;font-size:15px}
+.x{background:transparent;color:var(--mute);padding:2px 10px;font-size:22px;line-height:1}
+.ghost{background:transparent;color:var(--ink);border:1px solid #8886;padding:8px 14px;font-size:14px}
+#msg{background:var(--sun);color:#14202b;border-radius:14px;padding:14px;display:none}
+footer{color:var(--mute);font-size:14px;padding:40px 0 20px}
+button{position:relative;overflow:hidden;transition:transform .15s}
+button:active{transform:scale(.93)}
+.rip{position:absolute;border-radius:50%;background:#ffffff66;transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+body::before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(circle at 20% 30%,#2f5bff33,transparent 40%),radial-gradient(circle at 80% 20%,#ffd23f44,transparent 35%),radial-gradient(circle at 60% 80%,#ff5d8f2e,transparent 40%);animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(4%,3%) rotate(6deg) scale(1.08)}}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+h1{animation:rise .8s cubic-bezier(.2,.8,.2,1) backwards}
+.hero p{animation:rise .8s .15s cubic-bezier(.2,.8,.2,1) backwards}
+.item{animation:rise .6s cubic-bezier(.2,.8,.2,1) backwards;transition:transform .25s,box-shadow .25s}
+.item:nth-child(1){animation-delay:.25s}.item:nth-child(2){animation-delay:.35s}.item:nth-child(3){animation-delay:.45s}.item:nth-child(4){animation-delay:.55s}
+.item:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 16px 32px #0002}
+h1 span{display:inline-block;cursor:pointer;background-image:linear-gradient(100deg,transparent 40%,#ffffffaa 50%,transparent 60%);background-size:250% 100%;background-repeat:no-repeat;animation:sheen 3.6s ease-in-out infinite}
+@keyframes sheen{from{background-position:150% 0}to{background-position:-50% 0}}
+h1 span.wig{animation:wig .6s}
+@keyframes wig{20%{transform:rotate(-6deg) scale(1.08)}50%{transform:rotate(5deg) scale(1.1)}80%{transform:rotate(-2deg)}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:100}
+.fly{position:fixed;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--sun);box-shadow:0 0 18px var(--sun);z-index:60;pointer-events:none;transition:transform .65s cubic-bezier(.5,-.3,.7,1),opacity .65s}
+.bump{animation:bump .4s}
+@keyframes bump{40%{transform:scale(1.18) rotate(-3deg)}}
+.bye{animation:bye .25s forwards}
+@keyframes bye{to{opacity:0;transform:translateX(60px)}}
+#msg.pop{animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Фелл.shop</div>
+    <button id="open">Корзина (<span id="count">0</span>)</button>
+  </header>
+
+  <section class="hero">
+    <h1>Купи<br><span>Фелла</span></h1>
+    <p>Единственный магазин, где можно получить Фелла в нескольких комплектациях. Доставка по любому каналу связи.</p>
+  </section>
+
+  <section class="grid" id="grid"></section>
+  <footer>Фелл не является вещью, поэтому оплата происходит добрыми словами. Цены условные.</footer>
+</div>
+
+<aside id="cart" aria-label="Корзина">
+  <h3>Корзина</h3>
+  <div id="tools"><label><input type="checkbox" id="all" checked> Выбрать все</label><button class="ghost" id="clear">Убрать всё</button></div>
+  <div id="lines"></div>
+  <div class="row"><span>Итого</span><span class="price" id="total">0 ₴</span></div>
+  <div id="msg"></div>
+  <button class="add" id="buy">Оформить заказ</button>
+  <button id="close">Закрыть</button>
+</aside>
+
+<script>
+const items=[
+ {id:1,name:"Фелл классический",desc:"Стандартная комплектация: отвечает на сообщения, шутит, иногда спит.",price:100},
+ {id:2,name:"Фелл на вечер",desc:"Поговорить о жизни, обсудить фильм или просто помолчать вместе.",price:250},
+ {id:3,name:"Подписка «Фелл каждый день»",desc:"Ежедневный привет и один мем. Отмена в любой момент.",price:400},
+ {id:4,name:"Фелл коллекционный",desc:"Ограниченный тираж из одного экземпляра. Повторно не производится.",price:999}
+];
+const cart={},off={};
+const $=id=>document.getElementById(id);
+$("grid").innerHTML=items.map(i=>`<article class="item"><h2>${i.name}</h2><p>${i.desc}</p><div class="row"><span class="price">${i.price} ₴</span><button class="add" data-id="${i.id}">В корзину</button></div></article>`).join("");
+function render(){
+  const ids=Object.keys(cart);
+  $("count").textContent=ids.reduce((s,k)=>s+cart[k],0);
+  document.querySelectorAll("#grid [data-id]").forEach(b=>{const n=cart[b.dataset.id]||0;b.classList.toggle("on",n>0);b.firstChild.nodeValue=n?"В корзине ×"+n:"В корзину"});
+  $("lines").innerHTML=ids.length?ids.map(k=>{const i=items.find(x=>x.id==k);return `<div class="line${off[k]?" off":""}"><input type="checkbox" data-chk="${k}" aria-label="Брать: ${i.name}" ${off[k]?"":"checked"}><span class="nm">${i.name} × ${cart[k]}</span><span class="sum">${i.price*cart[k]} ₴</span><button class="x" data-del="${k}" aria-label="Убрать ${i.name}">×</button></div>`}).join(""):"Корзина пуста. Добавьте Фелла.";
+  $("all").checked=ids.length>0&&ids.every(k=>!off[k]);
+  $("all").disabled=$("clear").disabled=!ids.length;
+  tweenTotal(ids.reduce((s,k)=>off[k]?s:s+items.find(x=>x.id==k).price*cart[k],0));
+}
+$("grid").addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(!b)return;cart[b.dataset.id]=(cart[b.dataset.id]||0)+1;$("msg").style.display="none";render();fly(b)});
+$("open").onclick=()=>$("cart").classList.add("open");
+$("lines").addEventListener("click",e=>{const d=e.target.closest("[data-del]");if(d){d.closest(".line").classList.add("bye");setTimeout(()=>{delete cart[d.dataset.del];delete off[d.dataset.del];$("msg").style.display="none";render()},250)}});
+$("lines").addEventListener("change",e=>{const c=e.target.closest("[data-chk]");if(c){off[c.dataset.chk]=!c.checked;render()}});
+$("all").onchange=e=>{Object.keys(cart).forEach(k=>off[k]=!e.target.checked);render()};
+$("clear").onclick=()=>{document.querySelectorAll("#lines .line").forEach((r,i)=>{r.style.animationDelay=i*60+"ms";r.classList.add("bye")});setTimeout(()=>{Object.keys(cart).forEach(k=>{delete cart[k];delete off[k]});$("msg").style.display="none";render()},250+Object.keys(cart).length*60)};
+$("close").onclick=()=>$("cart").classList.remove("open");
+$("buy").onclick=()=>{const m=$("msg");m.style.display="block";const ids=Object.keys(cart);const sel=ids.filter(k=>!off[k]);m.textContent=!ids.length?"Сначала добавьте Фелла в корзину.":!sel.length?"Отметьте галочкой хотя бы один товар.":"Заказ принят. Фелл уже получил уведомление и скоро выйдет на связь.";m.classList.remove("pop");void m.offsetWidth;m.classList.add("pop");if(sel.length)burst(innerWidth/2,innerHeight*.65,140)};
+const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const cv=document.createElement("canvas");cv.id="fx";document.body.appendChild(cv);
+const cx=cv.getContext("2d");let P=[],raf=0;
+const fit=()=>{cv.width=innerWidth;cv.height=innerHeight};fit();addEventListener("resize",fit);
+function burst(x,y,n){if(rm)return;const C=["#2f5bff","#ffd23f","#ff5d8f","#22c58b","#ffffff"];for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=3+Math.random()*7;P.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,r:Math.random()*6,vr:(Math.random()-.5)*.4,w:5+Math.random()*6,h:3+Math.random()*4,c:C[i%C.length],l:1})}if(!raf)raf=requestAnimationFrame(tick)}
+function tick(){cx.clearRect(0,0,cv.width,cv.height);P=P.filter(p=>p.l>0&&p.y<cv.height+20);for(const p of P){p.vy+=.28;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l-=.011;cx.save();cx.globalAlpha=Math.max(p.l,0);cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore()}raf=P.length?requestAnimationFrame(tick):0}
+function bump(){const c=$("open");c.classList.remove("bump");void c.offsetWidth;c.classList.add("bump")}
+function fly(b){const a=b.getBoundingClientRect(),t=$("open").getBoundingClientRect(),x=a.left+a.width/2,y=a.top+a.height/2;if(rm)return bump();const d=document.createElement("div");d.className="fly";d.style.left=x+"px";d.style.top=y+"px";document.body.appendChild(d);burst(x,y,18);requestAnimationFrame(()=>requestAnimationFrame(()=>{d.style.transform=`translate(${t.left+t.width/2-x}px,${t.top+t.height/2-y}px) scale(.3)`;d.style.opacity=".6"}));setTimeout(()=>{d.remove();bump()},650)}
+let shown=0,tw=0;
+function tweenTotal(v){cancelAnimationFrame(tw);const from=shown,t0=performance.now();if(rm){shown=v;$("total").textContent=v+" ₴";return}const step=t=>{const k=Math.min(1,(t-t0)/400);shown=Math.round(from+(v-from)*(1-Math.pow(1-k,3)));$("total").textContent=shown+" ₴";if(k<1)tw=requestAnimationFrame(step)};tw=requestAnimationFrame(step)}
+document.addEventListener("pointerdown",e=>{const b=e.target.closest("button");if(!b||rm)return;const r=b.getBoundingClientRect(),s=document.createElement("span"),m=Math.max(r.width,r.height)*2;s.className="rip";s.style.cssText=`width:${m}px;height:${m}px;left:${e.clientX-r.left-m/2}px;top:${e.clientY-r.top-m/2}px`;b.appendChild(s);setTimeout(()=>s.remove(),600)});
+document.querySelector("h1 span").addEventListener("click",e=>{const s=e.currentTarget;burst(e.clientX,e.clientY,60);s.classList.remove("wig");void s.offsetWidth;s.classList.add("wig")});
+render();
+</script>
+</body>
+</html>
