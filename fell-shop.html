@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Купить Фелла — магазин Фелл.shop</title>
+<meta name="description" content="Купить Фелла онлайн: классический, на вечер, подписка и коллекционный. Шуточный магазин Фелл.shop с корзиной и оформлением заказа.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Купить Фелла — Фелл.shop">
+<meta property="og:description" content="Единственный магазин, где можно получить Фелла в нескольких комплектациях.">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#2f5bff">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Фелл.shop","inLanguage":"ru","description":"Купить Фелла онлайн в нескольких комплектациях."}</script>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8f0ee;--ink:#14202b;--card:#fff;--blue:#2f5bff;--sun:#ffd23f;--mute:#5b6b76;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1820;--ink:#eef3f5;--card:#1a2631;--blue:#7d9bff;--sun:#ffd23f;--mute:#9aaab5;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 Manrope,system-ui,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:8px 0 28px}
+.logo{font:800 22px Unbounded,sans-serif}
+button{font:600 16px Manrope,sans-serif;cursor:pointer;border:0;border-radius:999px;padding:12px 20px;background:var(--ink);color:var(--bg)}
+button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.hero{padding:20px 0 48px}
+h1{font:800 clamp(56px,16vw,150px)/.95 Unbounded,sans-serif;margin:0;letter-spacing:-.03em}
+h1 span{background:var(--sun);color:#14202b;padding:0 .12em;border-radius:.12em}
+.hero p{max-width:46ch;color:var(--mute);margin:20px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.item{background:var(--card);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.item:nth-child(2){border-radius:44px 12px 44px 12px}
+.item:nth-child(3){border-radius:12px 44px 12px 44px}
+.item h2{font:500 19px/1.25 Unbounded,sans-serif;margin:0}
+.item p{margin:0;color:var(--mute);flex:1}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.price{font:800 20px Unbounded,sans-serif}
+.add{background:var(--blue);color:#fff}
+#cart{position:fixed;inset:0 0 0 auto;width:min(380px,100%);background:var(--card);padding:calc(24px + env(safe-area-inset-top,0px)) 24px calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;gap:12px;box-shadow:-8px 0 40px #0003}
+#cart.open{transform:none}
+#cart h3{font:800 20px Unbounded,sans-serif;margin:0}
+#lines{flex:1;overflow:auto}
+.line{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #8883}
+#msg{background:var(--sun);color:#14202b;border-radius:14px;padding:14px;display:none}
+footer{color:var(--mute);font-size:14px;padding:40px 0 20px}
+@media (prefers-reduced-motion:reduce){#cart{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Фелл.shop</div>
+    <button id="open">Корзина (<span id="count">0</span>)</button>
+  </header>
+
+  <section class="hero">
+    <h1>Купи<br><span>Фелла</span></h1>
+    <p>Единственный магазин, где можно получить Фелла в нескольких комплектациях. Доставка по любому каналу связи.</p>
+  </section>
+
+  <section class="grid" id="grid"></section>
+  <footer>Фелл не является вещью, поэтому оплата происходит добрыми словами. Цены условные.</footer>
+</div>
+
+<aside id="cart" aria-label="Корзина">
+  <h3>Корзина</h3>
+  <div id="lines"></div>
+  <div class="row"><span>Итого</span><span class="price" id="total">0 ₴</span></div>
+  <div id="msg"></div>
+  <button class="add" id="buy">Оформить заказ</button>
+  <button id="close">Закрыть</button>
+</aside>
+
+<script>
+const items=[
+ {id:1,name:"Фелл классический",desc:"Стандартная комплектация: отвечает на сообщения, шутит, иногда спит.",price:100},
+ {id:2,name:"Фелл на вечер",desc:"Поговорить о жизни, обсудить фильм или просто помолчать вместе.",price:250},
+ {id:3,name:"Подписка «Фелл каждый день»",desc:"Ежедневный привет и один мем. Отмена в любой момент.",price:400},
+ {id:4,name:"Фелл коллекционный",desc:"Ограниченный тираж из одного экземпляра. Повторно не производится.",price:999}
+];
+const cart={};
+const $=id=>document.getElementById(id);
+$("grid").innerHTML=items.map(i=>`<article class="item"><h2>${i.name}</h2><p>${i.desc}</p><div class="row"><span class="price">${i.price} ₴</span><button class="add" data-id="${i.id}">В корзину</button></div></article>`).join("");
+function render(){
+  const ids=Object.keys(cart);
+  $("count").textContent=ids.reduce((s,k)=>s+cart[k],0);
+  $("lines").innerHTML=ids.length?ids.map(k=>{const i=items.find(x=>x.id==k);return `<div class="line"><span>${i.name} × ${cart[k]}</span><span>${i.price*cart[k]} ₴</span></div>`}).join(""):"Корзина пуста. Добавьте Фелла.";
+  $("total").textContent=ids.reduce((s,k)=>s+items.find(x=>x.id==k).price*cart[k],0)+" ₴";
+}
+$("grid").addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(!b)return;cart[b.dataset.id]=(cart[b.dataset.id]||0)+1;$("msg").style.display="none";render();$("cart").classList.add("open")});
+$("open").onclick=()=>$("cart").classList.add("open");
+$("close").onclick=()=>$("cart").classList.remove("open");
+$("buy").onclick=()=>{const m=$("msg");m.style.display="block";m.textContent=Object.keys(cart).length?"Заказ принят. Фелл уже получил уведомление и скоро выйдет на связь.":"Сначала добавьте Фелла в корзину."};
+render();
+</script>
+</body>
+</html>
